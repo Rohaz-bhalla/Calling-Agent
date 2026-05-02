@@ -19,6 +19,22 @@ class MyVoiceAgent(Agent):
         await self.session.say("Hello! I'm your real-time assistant. How can I help you today?")
 
 async def start_session(context: JobContext):
+    from videosdk.plugins.google import GeminiRealtime, GeminiLiveConfig
+    
+    model = GeminiRealtime(
+        model="gemini-1.5-flash-8b", # Stable model
+        api_key=os.getenv("GOOGLE_API_KEY"),
+        config=GeminiLiveConfig(
+            voice="Leda",
+            response_modalities=["AUDIO"]
+        )
+    )
+    
+    pipeline = Pipeline(llm=model)
+    session = AgentSession(agent=MyVoiceAgent(), pipeline=pipeline)
+
+    # FIX: Change wait_for_participant to False so it speaks immediately
+    await session.start(wait_for_participant=False, run_until_shutdown=True)
     # HEAVY IMPORTS MOVED HERE: These only load when the call actually starts
     from videosdk.plugins.google import GeminiRealtime, GeminiLiveConfig
     
