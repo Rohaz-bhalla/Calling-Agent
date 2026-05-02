@@ -17,7 +17,7 @@ headers = {
 payload = {
     "name": "Twilio-Rohaz",
     "numbers": ["+15074076909"],
-    "address": "sip:rohazbhallavideosdk.pstn.twilio.com", # Added 'sip:' as the standard protocol prefix
+    "address": "rohazbhallavideosdk.pstn.twilio.com", # Added 'sip:' as the standard protocol prefix
     "transport": "udp",
     "auth": {
         "username": os.getenv("PAYLOAD_ID"),

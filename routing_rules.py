@@ -17,7 +17,7 @@ headers = {
 # 4. Define the payload for the rule
 payload = {
     "name": "Twilio-Rule",
-    "gatewayId": "b9cee9d9-97bf-4ca3-a6da-ce0366ecb88a",
+    "gatewayId": "8f84f21f-024a-4eab-b7d3-fc6c016b67f6",
     "numbers": ["+15074076909"] 
 }
 

@@ -8,12 +8,11 @@ load_dotenv()
 url = "https://api.videosdk.live/v2/sip/call"
 
 headers = {
-    "Authorization": os.getenv("VIDEOSDK_AUTH_TOKEN"),
-    "Content-Type": "application/json"
+    "Authorization": os.getenv("VIDEOSDK_AUTH_TOKEN")
 }
 
 payload = {
-    "gatewayId": "b9cee9d9-97bf-4ca3-a6da-ce0366ecb88a", 
+    "gatewayId": "8f84f21f-024a-4eab-b7d3-fc6c016b67f6", 
     
     # FIX 2: VideoSDK requires this exact parameter name
     "sipCallTo": "+916283583232", 

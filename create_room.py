@@ -1,7 +1,11 @@
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # 🚨 PASTE YOUR TOKEN DIRECTLY HERE (Make sure it starts with 'eyJ'!)
-TOKEN = "YOUR_MASSIVE_TOKEN_HERE"
+TOKEN = os.getenv("VIDEOSDK_AUTH_TOKEN")
 
 url = "https://api.videosdk.live/v2/rooms"
 headers = {
